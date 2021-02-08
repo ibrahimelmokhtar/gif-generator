@@ -1,5 +1,6 @@
 import os       # used to get the video's path
-import imageio
+import imageio  # used in reading video frames
+import beepy    # used to generate beep sound
 
 
 def gifMaker(inputPath, targetFormat='.gif'):
@@ -35,5 +36,7 @@ def gifMaker(inputPath, targetFormat='.gif'):
     for frame in reader:
         writer.append_data(frame)
 
+
+    beepy.beep(1)   # generate coin sound
     print("Done!")
     writer.close()
